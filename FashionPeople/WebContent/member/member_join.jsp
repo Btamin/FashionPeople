@@ -161,7 +161,7 @@
 			<td colspan="2" class="jbtn">
 			<input type="button" value="회원가입" onclick='Check()'/>
 			<!-- 메인으로 이동하는 버튼 -->
-			<input type="button" id="button" value="닫기" onclick="window.close();"/>
+			<input type="button" id="btn" value="닫기" onclick="window.close();"/>
 			</td>
 		</tr>
 		</table>
