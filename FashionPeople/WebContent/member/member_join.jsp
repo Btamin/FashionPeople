@@ -14,9 +14,7 @@
 	
 	function bClearCheck() {
 		var check = document.all.birth.value;
-		if( check == "" ){
-			document.all.birth.value= "ex) 1991/01/08";
-		}
+		
 	}
 	
 	function Check()
