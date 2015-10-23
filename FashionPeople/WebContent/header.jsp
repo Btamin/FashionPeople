@@ -17,7 +17,9 @@
 		<a href="<%=request.getContextPath()%>/login/AdminLogin.jsp">관리자 로그인</a>
 		<a href="<%=request.getContextPath()%>/login/MemberLogin.jsp">회원 로그인</a>
 		<a href="">회원가입</a>
-	
+		<form action="<%=request.getContextPath()%>/login/LoginFail.jsp">
+		아이디 <input type="text" name="user_id"> 비밀번호 <input type="passowrd" name="pwd"> <input type="submit" value="로그인">
+		</form>
 	</c:when>		
 </c:choose>
 </body>
