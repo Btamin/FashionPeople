@@ -8,6 +8,7 @@
 	
 	<script language="JavaScript">
 	
+	
 	function bClear(){
 	    document.all.birth.value= "";
 	}

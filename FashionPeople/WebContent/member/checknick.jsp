@@ -10,6 +10,7 @@
 
 <BODY>
 
+
 <table border="1" width="250">
 <%
 String nickname = request.getParameter("nickname");

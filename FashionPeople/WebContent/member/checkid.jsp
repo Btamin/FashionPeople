@@ -36,6 +36,8 @@ if(user_id==""){
 	String strSQL = "SELECT * FROM member where user_id='" + user_id + "'";
 	ResultSet rs = stmt.executeQuery(strSQL);
 
+
+	
 	if(!rs.next()){
 %>
 <TR>
