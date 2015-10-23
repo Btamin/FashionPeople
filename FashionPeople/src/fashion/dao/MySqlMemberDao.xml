@@ -27,6 +27,9 @@
 		from MEMBER
 		where user_id=#{user_id} and PWD=#{pwd}
 	</select>
-
+<insert id="insert" parameterType="member">
+    insert into MEMBER(USER_ID,EMAIL,PWD,NICKNAME,MALE,BIRTH,CAUTION,PICTURE,LEVEL)
+    values(#{user_id},#{email},#{pwd},#{nickname},#{male},#{birth},false,#{picture},1)
+  </insert>
 
 </mapper>
