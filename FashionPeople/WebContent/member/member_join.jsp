@@ -148,7 +148,7 @@
 		</tr>
 		<tr>
 			<Td>생년월일</Td>
-			<td>
+			<td> 
 				<input type="text" name="birth" value="ex)1990/11/30" onClick="bClear()" onfocus="bClear()" onblur="bClearCheck()"/>
 			</td>
 		</tr>
