@@ -15,7 +15,6 @@ public class MemberAddController implements Controller, DataBinding {
 		this.memberDao = memberDao;
 		return this;
 	}
-
 	@Override
 	public Object[] getDataBinders() {
 		return new Object[] { "member", Member.class };

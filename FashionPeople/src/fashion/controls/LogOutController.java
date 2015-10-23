@@ -15,5 +15,4 @@ public class LogOutController implements Controller{
 		session.invalidate();
 		return "redirect:login.do";
 	}
-
 }
