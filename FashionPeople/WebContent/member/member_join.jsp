@@ -101,7 +101,6 @@
 				"checknick.jsp?nickname=" + Member_Join.nickname.value,"_idcheck",
 				"height=200,width=300, menubar=no,directories=no,resizable=no,status=no,scrollbars=yes");
 		browsing_window.focus();
-		
 	}
 	
 	function Check_id() {
@@ -135,7 +134,6 @@
 	</script>
 </head>
 <body>
-
 
 	<form Name='Member_Join' Method='post' Action='add.do'> 
 		<table id="fashiontable">
