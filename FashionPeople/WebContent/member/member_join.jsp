@@ -58,7 +58,7 @@
 		}
 		if (Member_Join.pwd.value.length < 1) {
 			alert("비밀번호를 입력하세요.");
-			Member_Join.pass.focus();
+			Member_Join.pwd.focus();
 			return false;
 		}
 
