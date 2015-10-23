@@ -27,8 +27,8 @@
 	function Check()
 	{		 
 			 
-		if (Member_Join.user_id.value.length<6 || Member_Join.user_id.value.length>12) {
-			alert("아이디는 6자 이상, 12자 이하여야 합니다.");
+		if (Member_Join.user_id.value.length<6 || Member_Join.user_id.value.length>15) {
+			alert("아이디는 6자 이상, 15자 이하여야 합니다.");
 			Member_Join.user_id.focus();
 			return false;
 		}
@@ -51,23 +51,29 @@
 			Member_Join.user_id.focus();
 			return false;
 		}
-		if (Member_Join.pass.value.length < 1) {
+		if (Member_Join.email.value.length < 1) {
+			alert("이메일을 입력하세요.");
+			Member_Join.email.focus();
+			return false;
+		}
+		if (Member_Join.pwd.value.length < 1) {
 			alert("비밀번호를 입력하세요.");
 			Member_Join.pass.focus();
 			return false;
 		}
 
-		if (Member_Join.name.value.length < 1) {
-			alert("이름을 입력하세요.");
-			Member_Join.name.focus();
+		if (Member_Join.nickname.value.length < 1) {
+			alert("닉네임을 입력하세요.");
+			Member_Join.nickname.focus();
 			return false;
 		}
+		Member_Join.submit();
 	}
 
 	function Check_id() {
 		
-		if (Member_Join.user_id.value.length<6 || Member_Join.user_id.value.length>12) {
-			alert("아이디는 6자 이상, 12자 이하여야 합니다.");
+		if (Member_Join.user_id.value.length<6 || Member_Join.user_id.value.length>15) {
+			alert("아이디는 6자 이상, 15자 이하여야 합니다.");
 			Member_Join.user_id.focus();
 			return false;
 		}
@@ -91,14 +97,14 @@
 				"_idcheck",
 				"height=200,width=300, menubar=no,directories=no,resizable=no,status=no,scrollbars=yes");
 		browsing_window.focus();
-	
+	}
 	
 	</script>
 </head>
 <body>
 
 
-	<form Name='Member_Join' Method='post' Action='member_output.jsp'> 
+	<form Name='Member_Join' Method='post' Action='add.do'> 
 		<table id="fashiontable">
 		<tr>
 			<td colspan="2">
@@ -114,23 +120,23 @@
 		</tr>
 		<tr>
 			<td>이메일</td>
-			<td><input type="text" name="MEMBER_EMAIL" id="MEMBER_EMAIL"/>
+			<td><input type="text" name="email" id="MEMBER_EMAIL"/>
 			<input type="button" value="이메일 인증"/>
 			</td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
-			<td><input type="password" name="MEMBER_PWD" id="MEMBER_PWD"/>
+			<td><input type="password" name="pwd" id="MEMBER_PWD"/>
 			</td>
 		</tr>
 		<tr>
 			<td>비밀번호 확인</td>
-			<td><input type="password" name="MEMBER_PWD1" id="MEMBER_PWD1"/>
+			<td><input type="password" name="pwd1" id="MEMBER_PWD1"/>
 			</td>
 		</tr>
 		<tr>
 			<td>닉네임</td>
-			<td><input type="text" name="NIKNAME" id="NIKNAME"/>
+			<td><input type="text" name="nickname" id="NICKNAME"/>
 			</td>
 		</tr>
 		<tr>
@@ -143,18 +149,18 @@
 		<tr>
 			<Td>생년월일</Td>
 			<td>
-				<input type="text" name="MEMBER_BIRTHDAY" value="ex)1990/11/30" onClick="bClear()" onfocus="bClear()" onblur="bClearCheck()"/>
+				<input type="text" name="birth" value="ex)1990/11/30" onClick="bClear()" onfocus="bClear()" onblur="bClearCheck()"/>
 			</td>
 		</tr>
 		<tr>
 			<td>프로필 사진</td>
 			<td>
-			<input type="file" name="MEMBER_PROFILE" />
+			<input type="file" name="profile" />
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2" class="jbtn">
-			<input type="button" value="회원가입" OnClick='Check()'/>
+			<input type="button" value="회원가입" onclick='Check()'/>
 			<!-- 메인으로 이동하는 버튼 -->
 			<input type="button" id="button" value="닫기" onclick="window.close();"/>
 			</td>
