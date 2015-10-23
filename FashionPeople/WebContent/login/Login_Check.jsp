@@ -9,7 +9,14 @@
 </head>
 <body>
 <c:set var="memberid" scope="session" value="${param.id}" />
+	<c:choose>
+	<c:when  test="${memberid eq 123 }">
   					<script>location.href="../main/main.jsp";</script>
+  					</c:when>
+  			<c:when test="${memberid not 123 }">
+  				<script>location.href="Loginf.Fail.jsp"</script>
+  			</c:when>
+  	</c:choose>
   					
 </body>
 </html>

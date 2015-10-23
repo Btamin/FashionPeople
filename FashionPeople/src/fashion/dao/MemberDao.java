@@ -3,7 +3,10 @@ package fashion.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import fashion.annotation.Component;
+import fashion.vo.Member;
 
+@Component("memberDao")
 public interface MemberDao {
 		List<Member> selectList(HashMap<String, Object> paramMap) throws Exception;
 
