@@ -91,8 +91,7 @@
 			}
 		}
 		
-		browsing_window = window
-		.open(
+		browsing_window = window.open(
 				"checkid.jsp?id=" + Member_Join.user_id.value,
 				"_idcheck",
 				"height=200,width=300, menubar=no,directories=no,resizable=no,status=no,scrollbars=yes");
