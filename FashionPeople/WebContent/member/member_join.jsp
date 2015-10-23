@@ -96,6 +96,8 @@
 	</script>
 </head>
 <body>
+
+
 	<form Name='Member_Join' Method='post' Action='member_output.jsp'> 
 		<table id="fashiontable">
 		<tr>
