@@ -89,6 +89,7 @@
 		Member_Join.submit();
 	}
 
+	
 	function Check_nick(){
 		if(Member_Join.nickname.value.length<2 || Member_Join.nickname.value.length>6){
 			alert("닉네임은 2자 이상, 6자 이하여야 합니다.");
@@ -97,8 +98,7 @@
 		}
 		
 		browsing_window = window.open(
-				"checknick.jsp?nickname=" + Member_Join.nickname.value,
-				"_idcheck",
+				"checknick.jsp?nickname=" + Member_Join.nickname.value,"_idcheck",
 				"height=200,width=300, menubar=no,directories=no,resizable=no,status=no,scrollbars=yes");
 		browsing_window.focus();
 		
