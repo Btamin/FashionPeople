@@ -7,21 +7,17 @@
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
 	<script language="JavaScript">
+	
 	function bClear(){
-	    document.all.MEMBER_BIRTHDAY.value= "";
+	    document.all.birth.value= "";
 	}
 	
 	function bClearCheck() {
-		var check = document.all.MEMBER_BIRTHDAY.value;
+		var check = document.all.birth.value;
 		if( check == "" ){
-			document.all.MEMBER_BIRTHDAY.value= "ex) 1991/01/08";
+			document.all.birth.value= "ex) 1991/01/08";
 		}
 	}
-	
-	
-	
-	
-	
 	
 	function Check()
 	{		 
@@ -60,15 +56,54 @@
 			Member_Join.pwd.focus();
 			return false;
 		}
+		if (Member_Join.pwd1.value.length < 1) {
+			alert("비밀번호 확인을 입력하세요.");
+			Member_Join.pwd1.focus();
+			return false;
+		}
 
 		if (Member_Join.nickname.value.length < 1) {
 			alert("닉네임을 입력하세요.");
 			Member_Join.nickname.focus();
 			return false;
 		}
+		
+		if (Member_Join.birth.value.length < 1) {
+			alert("생년월일을 입력하세요.");
+			Member_Join.birth.focus();
+			return false;
+		}
+		
+		if (Member_Join.pwd.value.length<6) {
+			alert("비밀번호는 6자 이상이여야 합니다.");
+			Member_Join.pwd.focus();
+			return false;
+		}
+		
+		else if(Member_Join.pwd.value != Member_Join.pwd1.value){
+			alert("비밀번호가 서로 다릅니다.");
+			Member_Join.pwd.focus();
+			return false;
+		}
+		
 		Member_Join.submit();
 	}
 
+	function Check_nick(){
+		if(Member_Join.nickname.value.length<2 || Member_Join.nickname.value.length>6){
+			alert("닉네임은 2자 이상, 6자 이하여야 합니다.");
+			Member_Join.nickname.focus();
+			return false;
+		}
+		
+		browsing_window = window.open(
+				"checknick.jsp?nickname=" + Member_Join.nickname.value,
+				"_idcheck",
+				"height=200,width=300, menubar=no,directories=no,resizable=no,status=no,scrollbars=yes");
+		browsing_window.focus();
+		
+	}
+	
 	function Check_id() {
 		
 		if (Member_Join.user_id.value.length<6 || Member_Join.user_id.value.length>15) {
@@ -91,7 +126,7 @@
 		}
 		
 		browsing_window = window.open(
-				"checkid.jsp?id=" + Member_Join.user_id.value,
+				"checkid.jsp?user_id=" + Member_Join.user_id.value,
 				"_idcheck",
 				"height=200,width=300, menubar=no,directories=no,resizable=no,status=no,scrollbars=yes");
 		browsing_window.focus();
@@ -118,46 +153,47 @@
 		</tr>
 		<tr>
 			<td>이메일</td>
-			<td><input type="text" name="email" id="MEMBER_EMAIL"/>
+			<td><input type="text" name="email"/>
 			<input type="button" value="이메일 인증"/>
 			</td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
-			<td><input type="password" name="pwd" id="MEMBER_PWD"/>
+			<td><input type="password" name="pwd" id="pwd"/>
 			</td>
 		</tr>
 		<tr>
 			<td>비밀번호 확인</td>
-			<td><input type="password" name="pwd1" id="MEMBER_PWD1"/>
+			<td><input type="password" id="pwd1"/>
 			</td>
 		</tr>
 		<tr>
 			<td>닉네임</td>
-			<td><input type="text" name="nickname" id="NICKNAME"/>
+			<td><input type="text" name="nickname"/>
+			<input type='button' OnClick='Check_nick()' value='닉네임 중복검사'/>
 			</td>
 		</tr>
 		<tr>
 			<td>성별</td>
  			<td>
  				<input type="radio" name="male" value="true" checked="checked" />남자
- 				<input type="radio" name="female" value="false" />여자<br>
+ 				<input type="radio" name="male" value="false" />여자<br>
 			</td>
 		</tr>
 		<tr>
 			<Td>생년월일</Td>
 			<td> 
-				<input type="text" name="birth" value="ex)1990/11/30" onClick="bClear()" onfocus="bClear()" onblur="bClearCheck()"/>
+				<input type="text" name="birth" id="birth" value="ex)1990/11/30" onClick="bClear()" onfocus="bClear()" onblur="bClearCheck()"/>
 			</td>
 		</tr>
 		<tr>
 			<td>프로필 사진</td>
 			<td>
-			<input type="file" name="profile" />
+			<input type="file" name="picture" />
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="jbtn">
+			<td colspan="2">
 			<input type="button" value="회원가입" onclick='Check()'/>
 			<!-- 메인으로 이동하는 버튼 -->
 			<input type="button" id="btn" value="닫기" onclick="window.close();"/>

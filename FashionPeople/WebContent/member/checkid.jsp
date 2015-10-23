@@ -33,7 +33,7 @@ if(user_id==""){
 	Connection conn = DriverManager.getConnection(url,"root", "rootroot");
 	Statement stmt = conn.createStatement();
 
-	String strSQL = "SELECT user_id FROM member where user_id='" + user_id + "'";
+	String strSQL = "SELECT * FROM member where user_id='" + user_id + "'";
 	ResultSet rs = stmt.executeQuery(strSQL);
 
 	if(!rs.next()){
